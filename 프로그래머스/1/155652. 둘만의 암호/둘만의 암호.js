@@ -11,12 +11,12 @@ function solution(s, skip, index) {
         // 알파벳 이동할 숫자
         let count = 0;
         
-        // 0 ~ count 반복
+        // index 만큼 반복
         while (count < index) {     
             // z 넘어가면 a로 다시 돌아오도록
             sIndex = (sIndex + 1) % 26;
 
-            // skip에 해당 없으면 count 증가, 해당 없으면 count 증가 안하고 다시 반복
+            // skip에 해당 없으면 count 증가, 해당하면 count 증가 안하고 다시 반복
             if (!skip.includes(alphabet[sIndex])) {
                 count++;
             }
