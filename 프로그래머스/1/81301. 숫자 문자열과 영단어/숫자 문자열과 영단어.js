@@ -14,17 +14,18 @@ function solution(s) {
         eight: 8,
         nine: 9,
     }; 
-    let curStr = '';
+    
+    let curStr = ''; // 현재 문자열
     
     for(let i = 0; i < s.length; i++){
         if(!isNaN(s[i])){ // 숫자이면
             answer += s[i];
-        } else {
+        } else { // 숫자가 아니면
             curStr += s[i];
             
-            if(curStr in numbers){
-                answer += numbers[curStr];
-                curStr = '';
+            if(curStr in numbers){ // 현재 문자열이 numbers 프로퍼티 이름과 같으면
+                answer += numbers[curStr]; // 해당 프로퍼티 값을 answer에 추가
+                curStr = ''; // 현재 문자열 초기화
             }
         }
     }
