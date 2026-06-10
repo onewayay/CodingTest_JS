@@ -8,9 +8,9 @@ function solution(schedules, timelogs, startday) {
     // 상품 받을 직원 수
     let count = 0;
     
-    function addMinutes(time, min) {
+    function addMinutes(time) {
         let h = Math.floor(time / 100);
-        let m = time % 100 + min;
+        let m = time % 100 + 10;
         if(m >= 60) { h++; m -= 60; }
         return h * 100 + m;
     }
@@ -21,7 +21,7 @@ function solution(schedules, timelogs, startday) {
         
         for(let j = 0; j < 7; j++){
             if(day !== 6 && day !==7){ // 토, 일 아닐경우
-                if(timelogs[i][j] > addMinutes(schedules[i], 10)){ // 지정 시각 + 10 넘어간 시간에 출석하면 attendanceOk false
+                if(timelogs[i][j] > addMinutes(schedules[i])){ // 지정 시각 + 10 넘어간 시간에 출석하면 attendanceOk false
                     attendanceOk = false
                 }
             } 
