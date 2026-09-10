@@ -14,6 +14,4 @@ function solution(s) {
     });
     
     return sentenceArr.join(" ");
-    
-    console.log(sentenceArr);
 }
